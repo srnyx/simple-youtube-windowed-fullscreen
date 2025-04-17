@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   "name": "Simple YouTube Windowed Fullscreen",
   "description": "Open YouTube videos in fullscreen in it's own window (windowed fullscreen)",
