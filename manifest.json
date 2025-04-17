@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "1.0.1",
+  "version": "1.1.0",
 
   "name": "Simple YouTube Windowed Fullscreen",
   "description": "Open YouTube videos in fullscreen in it's own window (windowed fullscreen)",
@@ -24,5 +24,12 @@
   ],
   "background": {
     "service_worker": "background.js"
+  },
+
+  "commands": {
+    "windowed-fullscreen": {
+      "suggested_key": "Ctrl+Shift+W",
+      "description": "Open video in windowed fullscreen"
+    }
   }
 }
