@@ -1,5 +1,7 @@
 # IntelliJ
 .idea/
 
-assets/
+Assets/
 /*.zip
+/*.crx
+*.pem
