@@ -20,8 +20,18 @@
     "default_title": "Open video in windowed fullscreen"
   },
   "permissions": [
-    "tabs"
+    "tabs",
+    "declarativeNetRequest"
   ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "youtube_embed_referer",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
   "background": {
     "service_worker": "background.js"
   },
