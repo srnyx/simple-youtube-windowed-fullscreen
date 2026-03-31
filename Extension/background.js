@@ -1,7 +1,9 @@
 function createWindow(tab) {
     if (!tab.url || !tab.url.includes('youtube.com/watch?')) return;
+    const videoId = new URL(tab.url).searchParams.get('v');
+    if (!videoId) return;
     void chrome.windows.create({
-        url: `https://youtube.com/embed/` + new URL(tab.url).searchParams.get('v') + `?autoplay=1`,
+        url: chrome.runtime.getURL('player.html') + '?v=' + videoId,
         type: 'popup',
         width: 960,
         height: 540
