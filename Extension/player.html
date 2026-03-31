@@ -4,9 +4,5 @@
 <style>* { margin: 0; } iframe { width: 100vw; height: 100vh; border: none; }</style>
 </head><body>
 <iframe id="p" allow="autoplay; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-<script>
-const v = new URLSearchParams(location.search).get('v');
-if (v && /^[A-Za-z0-9_-]{11}$/.test(v))
-    document.getElementById('p').src = 'https://www.youtube-nocookie.com/embed/' + v + '?autoplay=1';
-</script>
+<script src="player.js"></script>
 </body></html>
