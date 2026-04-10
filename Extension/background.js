@@ -1,12 +1,36 @@
 function createWindow(tab) {
-    if (!tab.url || !tab.url.includes('youtube.com/watch?')) return;
+    if (!tab || !tab.url || !tab.url.includes('youtube.com/watch?')) return;
+
+    // Parse URL
+    let url;
+    try {
+        url = new URL(tab.url);
+    } catch {
+        return;
+    }
+
+    // Video ID
+    const videoId = url.searchParams.get('v');
+    if (!videoId) return;
+
+    // Pop-up URL
+    const popupUrl = new URL(chrome.runtime.getURL('player.html'));
+    popupUrl.searchParams.set('videoId', videoId);
+
+    // t/start parameter
+    const start = url.searchParams.get('t') || url.searchParams.get('start');
+    if (start) popupUrl.searchParams.set('start', start);
+
+    // Open pop-up
     void chrome.windows.create({
-        url: `https://youtube.com/embed/` + new URL(tab.url).searchParams.get('v') + `?autoplay=1`,
+        url: popupUrl.toString(),
         type: 'popup',
         width: 960,
         height: 540
     });
-    void chrome.tabs.remove(tab.id);
+
+    // Close original tab
+    if (tab.id) void chrome.tabs.remove(tab.id);
 }
 
 // When extension is clicked on in toolbar

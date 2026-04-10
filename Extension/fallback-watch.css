@@ -1,0 +1,26 @@
+html.sywf-fallback ytd-masthead,
+html.sywf-fallback #secondary,
+html.sywf-fallback #below,
+html.sywf-fallback #related,
+html.sywf-fallback ytd-watch-next-secondary-results-renderer,
+html.sywf-fallback ytd-comments,
+html.sywf-fallback #chat {
+    display: none !important;
+}
+html.sywf-fallback #primary {
+    margin: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+}
+html.sywf-fallback #player,
+html.sywf-fallback #player-container,
+html.sywf-fallback #player-container-outer,
+html.sywf-fallback #full-bleed-container,
+html.sywf-fallback ytd-player {
+    width: 100% !important;
+    max-width: none !important;
+}
+html.sywf-fallback #movie_player {
+    width: 100vw !important;
+    height: 100vh !important;
+}

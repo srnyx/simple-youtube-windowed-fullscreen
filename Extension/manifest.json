@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "1.2.0",
+  "version": "1.3.0",
 
   "name": "Simple YouTube Windowed Fullscreen",
   "description": "Open YouTube videos in fullscreen in it's own window (windowed fullscreen)",
@@ -20,11 +20,42 @@
     "default_title": "Open video in windowed fullscreen"
   },
   "permissions": [
-    "tabs"
+    "tabs",
+    "declarativeNetRequest"
   ],
+  "host_permissions": [
+    "https://youtube.com/*",
+    "https://*.youtube.com/*",
+    "https://youtube-nocookie.com/*",
+    "https://*.youtube-nocookie.com/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "yt_referrer",
+        "enabled": true,
+        "path": "rules/yt_referrer.json"
+      }
+    ]
+  },
   "background": {
     "service_worker": "background.js"
   },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://youtube.com/watch*",
+        "https://*.youtube.com/watch*"
+      ],
+      "js": [
+        "fallback-watch.js"
+      ],
+      "css": [
+        "fallback-watch.css"
+      ],
+      "run_at": "document_start"
+    }
+  ],
 
   "commands": {
     "windowed-fullscreen": {
