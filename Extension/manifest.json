@@ -20,8 +20,22 @@
     "default_title": "Open video in windowed fullscreen"
   },
   "permissions": [
-    "tabs"
+    "tabs",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"
   ],
+  "host_permissions": [
+    "*://*.youtube-nocookie.com/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
   "background": {
     "service_worker": "background.js"
   },
