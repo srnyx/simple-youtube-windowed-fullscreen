@@ -20,24 +20,8 @@
     "default_title": "Open video in windowed fullscreen"
   },
   "permissions": [
-    "tabs",
-    "declarativeNetRequest"
+    "tabs"
   ],
-  "host_permissions": [
-    "https://youtube.com/*",
-    "https://*.youtube.com/*",
-    "https://youtube-nocookie.com/*",
-    "https://*.youtube-nocookie.com/*"
-  ],
-  "declarative_net_request": {
-    "rule_resources": [
-      {
-        "id": "yt_referrer",
-        "enabled": true,
-        "path": "rules/yt_referrer.json"
-      }
-    ]
-  },
   "background": {
     "service_worker": "background.js"
   },
