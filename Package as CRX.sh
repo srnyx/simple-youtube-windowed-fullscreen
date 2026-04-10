@@ -1,3 +1,8 @@
+# Colors used for echo
+GREEN='\033[0;32m'
+L_GREEN='\033[1;92m'
+YELLOW='\033[0;33m'
+
 # Get extension path
 CURRENT_DIRECTORY=$(pwd)
 EXTENSION_PATH=$(cygpath -w "$CURRENT_DIRECTORY/Extension")
